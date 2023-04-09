@@ -97,7 +97,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -225,5 +225,40 @@
   }
   to {
     transform: rotate(0deg);
+  }
+}
+
+.fadeIn {
+  animation-name: fadeInAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.bordering01 {
+  text-shadow: 1px #000;
+  -webkit-text-stroke: 1px #000;
+  font-size: 80px !important;
+  color: #f2f2f2;
+}
+
+.bordering02 {
+  color: #fff;
+  font-size: 40px !important;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+.centerize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
