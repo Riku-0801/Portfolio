@@ -31,10 +31,15 @@ export default function Contact() {
               px: 4,
             }}
           >
-            <Typography variant="h4" component="h1" gutterBottom>
+            <Typography
+              variant="h4"
+              component="h1"
+              gutterBottom
+              color="#202123"
+            >
               Hi, I am Riku Kisako
             </Typography>
-            <Typography variant="body1" component="p">
+            <Typography variant="body1" component="p" color="#202123">
               名古屋大学情報学部コンピュータ科学科知能システム学専攻B3 木迫璃玖
             </Typography>
           </Box>
