@@ -1,9 +1,5 @@
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-// import styles from "@/styles/Home.module.css";
 import { getDatabase } from "../lib/notion";
+import { saveImageIfNeeded } from "../lib/saveImage";
 import ResponsiveAppBar from "../components/modules/header";
 import * as React from "react";
 import Card from "@mui/material/Card";
@@ -12,7 +8,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import Grid from "@mui/material/Grid";
-const inter = Inter({ subsets: ["latin"] });
 export const databaseId = process.env.NOTION_WORKS_ID;
 export default function Work({ posts }) {
   const rposts = posts.reduceRight((p, c) => [...p, c], []);
@@ -44,7 +39,7 @@ export default function Work({ posts }) {
                       <CardMedia
                         component="img"
                         height="200"
-                        image={post.cover.file.url}
+                        image={"/tmpImages/" + post.id + ".png"}
                         alt={post.properties.Name.title[0]["plain_text"]}
                       />
                       <CardContent>
@@ -76,6 +71,7 @@ export default function Work({ posts }) {
 export const getStaticProps = async () => {
   const database = await getDatabase(databaseId);
 
+  database.map((data) => saveImageIfNeeded(data));
   return {
     props: {
       posts: database,

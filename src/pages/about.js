@@ -3,7 +3,6 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import me from "../../public/me.jpg";
-import Image from "next/image";
 
 export default function Contact() {
   return (
