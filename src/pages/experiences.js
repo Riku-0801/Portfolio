@@ -1,5 +1,3 @@
-import { Inter } from "next/font/google";
-// import styles from "@/styles/Home.module.css";
 import { getDatabase } from "../lib/notion";
 import ResponsiveAppBar from "../components/modules/header";
 import * as React from "react";
@@ -9,22 +7,11 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 export const databaseId = process.env.NOTION_EXPERIENCE_ID;
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
 
 export default function Experience({ posts }) {
   var count = 0;
