@@ -33,7 +33,7 @@ export default function Experience({ posts }) {
                 <TimelineContent align-items="center">
                   <Card
                     sx={{
-                      maxWidth: 300,
+                      maxWidth: 600,
                       marginLeft: count % 2 === 0 ? "auto" : 0,
                     }}
                   >
@@ -42,16 +42,25 @@ export default function Experience({ posts }) {
                         sx={{ fontSize: 14 }}
                         color="text.secondary"
                         gutterBottom
+                        textAlign="left"
                       >
                         {post.properties.period.rich_text[0]["plain_text"]}
                       </Typography>
-                      <Typography variant="h5" component="div">
+                      <Typography variant="h5" component="div" textAlign="left">
                         {post.properties.Name.title[0]["plain_text"]}
                       </Typography>
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                      <Typography
+                        sx={{ mb: 1.5 }}
+                        color="text.secondary"
+                        textAlign="left"
+                      >
                         {post.properties.role.rich_text[0]["plain_text"]}
                       </Typography>
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                      <Typography
+                        sx={{ mb: 1.5 }}
+                        color="text.secondary"
+                        textAlign="left"
+                      >
                         {post.properties.technology.rich_text[0]["plain_text"]}
                       </Typography>
                       <Typography variant="body2" textAlign="left">
